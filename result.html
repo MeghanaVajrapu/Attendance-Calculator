@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Attendance Result</title>
+    <link rel="stylesheet" href="result.css">
+    <style>
+        .result-text {
+            font-size: 36px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="calculate_number_of_days.js"></script>
+</head>
+<body class="body1">
+    <h1 class="title1">Attendance Result</h1>
+    <div class="result-text" id="result"></div>
+    <div class="button-container" id="buttonContainer"></div>
+
+    <script>
+        function getUrlParams() {
+            const params = {};
+            const parser = new URL(window.location.href);
+            const queryString = parser.search.substring(1);
+            const queryArr = queryString.split("&");
+
+            queryArr.forEach(param => {
+                const [key, value] = param.split("=");
+                params[decodeURIComponent(key)] = decodeURIComponent(value);
+            });
+
+            return params;
+        }
+
+        const params = getUrlParams();
+        const name = params.name || 'Student';
+        const attendance = params.attendance || 'N/A';
+        const totalDays = parseFloat(params.totalDays) || 0;
+        const daysAttended = parseFloat(params.daysAttended) || 0;
+
+        // Convert attendance to a number for calculations
+        const attendancePercentage = parseFloat(attendance);
+
+        // Display the attendance percentage
+        document.getElementById("result").innerText = `${name}, your current attendance percentage is: ${attendancePercentage}%`;
+
+        // Check if attendance is less than 75% and call `calculateAttendanceStatus` if so
+        if (attendancePercentage < 75 || attendancePercentage >= 75) {
+            calculateAttendanceStatus(totalDays, daysAttended);
+        }
+    </script>
+</body>
+</html>

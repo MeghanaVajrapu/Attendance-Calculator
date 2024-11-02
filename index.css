@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    margin-top:50px;
+}
+body {
+    background-image: url("Attendance_backgroung.jpeg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed; 
+    color: black;
+    height: 100vh; 
+    margin: 0;  
+    
+}
+td {
+    font-size: 20px;
+}
+.result-text {
+    font-size: 35px;
+    text-align: center;
+    color: rgb(245, 241, 12);
+}
+.Button{
+    background-color: rgb(2, 137, 255);
+    font-size: 20px;
+    color:white;
+    border:none;
+    height:36px;
+    width:105px;
+    border-radius: 20px;
+    align-items: center;
+    font-weight:bolder;
+    cursor:pointer;
+    margin-top:50px;
+    margin-left:200px;
+}
+
+.Button:hover{
+    opacity: 0.6;
+}
+
+.text1{
+    background-color: white;
+    height:25px;
+    border-radius:12px;
+}
+
+.Button:active{
+    opacity:0.6;
+    color: black;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .result {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="body">
+    <h1 class="h1">Attendance Calculator</h1>
+    <br><br>
+    <table align="center">
+        <tr>
+            <td class="td">Student Name:
+                <input class="text1" type="text" id="studentName" placeholder="Enter your Name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter total number of days:
+                <input class="text1" type="text" id="totalDays">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter the number of days you attended:
+                <input class="text1" type="text" id="daysAttended">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="Button" type="button" value="Submit" onclick="calculateAttendance()">
+            </td>
+        </tr>
+    </table>
+    <div class="result" id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
